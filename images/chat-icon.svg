@@ -1,0 +1,10 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chat bubble background -->
+  <rect x="10" y="10" width="180" height="60" rx="10" ry="10" fill="#0073aa" />
+  <!-- Chat bubble tail -->
+  <polygon points="30,70 50,70 40,85" fill="#0073aa"/>
+  <!-- Centered text inside the bubble -->
+  <text x="100" y="40" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle" font-weight="bold">
+    Precisas de Ajuda?
+  </text>
+</svg>

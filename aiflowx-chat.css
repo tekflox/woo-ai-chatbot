@@ -1,0 +1,65 @@
+/* Container for the live chat */
+#aiflowx-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Chat Icon */
+#aiflowx-chat-icon {
+    cursor: pointer;
+}
+#aiflowx-chat-icon img {
+    width: 200px;
+    height: auto;
+}
+
+/* Chat Window */
+#aiflowx-chat-window {
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+
+/* Chat Header */
+#aiflowx-chat-header {
+    background: #0073aa;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+}
+
+/* Close button */
+#aiflowx-chat-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* Chat messages area */
+#aiflowx-chat-messages {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+/* Chat input area */
+#aiflowx-chat-input {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+#aiflowx-chat-input input[type="text"] {
+    width: calc(100% - 60px);
+    padding: 5px;
+}
+#aiflowx-chat-input button {
+    width: 50px;
+    padding: 5px;
+}

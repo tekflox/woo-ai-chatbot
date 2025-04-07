@@ -1,0 +1,228 @@
+/* Container for the live chat */
+#aiflowx-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Chat Icon */
+#aiflowx-chat-icon {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 0 rgba(0, 115, 170, 0));
+}
+#aiflowx-chat-icon img {
+    width: 150px;
+    height: auto;
+}
+
+/* Chat Window */
+#aiflowx-chat-window {
+    width: 400px;  /* Changed from 300px */
+    height: 500px; /* Changed from 450px */
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+
+/* Chat Header */
+#aiflowx-chat-header {
+    background: #0073aa;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+}
+
+/* Close button */
+#aiflowx-chat-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* Chat messages area */
+#aiflowx-chat-messages {
+    padding: 10px;
+    height: 400px; /* Changed from 350px to maintain proportions with new window height */
+    overflow-y: auto;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat input area */
+#aiflowx-chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+#aiflowx-chat-message-input {
+    width: calc(100% - 70px); /* Subtract space for the send button */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/*
+#aiflowx-chat-input button {
+    width: 50px;
+    padding: 5px;
+    background-color: var(--primary-color, #0073aa);
+    color: #fff;
+    border: none;
+}
+*/
+
+/* Chat messages styling */
+.chat-message {
+    max-width: 80%;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 15px;
+    position: relative;
+    clear: both;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #007AFF;
+    color: white;
+    float: right;
+    border-bottom-right-radius: 5px;
+    margin-left: 20%;
+}
+
+.bot-message {
+    background-color: #E9E9EB;
+    color: black;
+    float: left;
+    border-bottom-left-radius: 5px;
+    margin-right: 20%;
+}
+
+.bot-message a {
+    color: #0066cc;
+    text-decoration: underline;
+    word-break: break-all;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.bot-message a:hover {
+    color: #004999;
+    text-decoration: underline;
+}
+
+.bot-message a:visited {
+    color: #551A8B;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    float: left;
+    border-bottom-left-radius: 5px;
+    margin-right: 20%;
+}
+
+/* Clear float after messages */
+#aiflowx-chat-messages::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.typing-indicator {
+    padding: 20px;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #90949c;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: typing 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.chat-image-container {
+    margin: 10px 0;
+    max-width: 100%;
+}
+
+.chat-image-container a {
+    display: block;
+    cursor: pointer;
+}
+
+.chat-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.2s ease;
+}
+
+.chat-image:hover {
+    opacity: 0.9;
+}
+
+.chat-message a {
+    color: #0073aa;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.chat-message a:hover {
+    text-decoration: underline;
+}
+
+.url-preview-image {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.chat-preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Add glow animation for new messages */
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(0, 115, 170, 0.7));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(0, 115, 170, 0.9));
+    }
+    100% {
+        filter: drop-shadow(0 0 5px rgba(0, 115, 170, 0.7));
+    }
+}
+
+.has-new-message {
+    animation: glow 2s infinite;
+    /* border-radius: 50%; */
+}
