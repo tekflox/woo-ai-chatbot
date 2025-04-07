@@ -5,7 +5,7 @@
  * Description: Woo AI ChatBot which will allow user to find products through natural language.
  * Version: 1.0
  * Author: TekFlox
- * Author URI: https://tekflox.com/
+ * Author URI: https://www.tekflox.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: woo-ai-chatbot
