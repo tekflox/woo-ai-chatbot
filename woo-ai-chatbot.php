@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Woo AI ChatBot
- * Plugin URI: https://tekflox.com/woo-ai-chatbot
+ * Plugin URI: https://github.com/fredericowu/woo-ai-chatbot
  * Description: Woo AI ChatBot which will allow user to find products through natural language.
  * Version: 1.0
  * Author: TekFlox
@@ -159,9 +159,9 @@ function aiflowx_chat_settings_page() {
                     </th>
                     <td>
                         <input type="text" id="aiflowx_chat_api_host" name="aiflowx_chat_api_host" 
-                               value="<?php echo esc_attr(get_option('aiflowx_chat_api_host', 'https://api.aiflowx.io')); ?>" 
+                               value="<?php echo esc_attr(get_option('aiflowx_chat_api_host', 'https://api.tekflox.com')); ?>" 
                                class="regular-text">
-                        <p class="description">Default: https://api.aiflowx.io</p>
+                        <p class="description">Default: https://api.tekflox.com</p>
                     </td>
                 </tr>
                 <tr>
@@ -479,7 +479,7 @@ function aiflowx_chat_sync_content_internal() {
     }
 
     // Send data to API
-    $api_host = get_option('aiflowx_chat_api_host', 'https://api.aiflowx.io');
+    $api_host = get_option('aiflowx_chat_api_host', 'https://api.tekflox.com');
     $profile_uuid = get_option('aiflowx_chat_profile_uuid');
     
     if (!$profile_uuid) {
@@ -533,7 +533,7 @@ function aiflowx_chat_get_current_plan() {
         return 'Free';
     }
 
-    $api_host = get_option('aiflowx_chat_api_host', 'https://api.aiflowx.io');
+    $api_host = get_option('aiflowx_chat_api_host', 'https://api.tekflox.com');
     $api_endpoint = rtrim($api_host, '/') . "/api/account/profile/{$uuid}/plan/";
     
     $response = wp_remote_get($api_endpoint, array(
@@ -594,7 +594,7 @@ function aiflowx_chat_process_message() {
     $last_message_id = isset($_POST['last_message_id']) ? intval($_POST['last_message_id']) : 0;
     
     // Get configured values and construct the endpoint
-    $api_host = get_option('aiflowx_chat_api_host', 'https://api.aiflowx.io');
+    $api_host = get_option('aiflowx_chat_api_host', 'https://api.tekflox.com');
     $api_endpoint = rtrim($api_host, '/') . '/api/bot/chat/';
     $profile_uuid = get_option('aiflowx_chat_profile_uuid', '');
     $include_sent = isset($_POST['include_sent']) ? $_POST['include_sent'] === "true" : false;
@@ -749,7 +749,7 @@ function aiflowx_chat_activate() {
     // Delete last sync time when activating
     delete_option('aiflowx_chat_last_sync');
 
-    $api_host = get_option('aiflowx_chat_api_host', 'https://api.aiflowx.io');
+    $api_host = get_option('aiflowx_chat_api_host', 'https://api.tekflox.com');
     $api_endpoint = rtrim($api_host, '/') . '/api/account/register/';
     
     $site_url = get_site_url();
@@ -784,7 +784,7 @@ register_activation_hook(__FILE__, 'aiflowx_chat_activate');
 
 // Update WordPress activation status
 function aiflowx_chat_update_activation_status($uuid, $activated) {
-    $api_host = get_option('aiflowx_chat_api_host', 'https://api.aiflowx.io');
+    $api_host = get_option('aiflowx_chat_api_host', 'https://api.tekflox.com');
     $api_endpoint = rtrim($api_host, '/') . "/api/account/wordpress-active/{$uuid}/";
     
     $response = wp_remote_post($api_endpoint, array(

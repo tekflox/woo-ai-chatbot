@@ -1,8 +1,8 @@
-# Copyright (C) 2025 AI Flow X
+# Copyright (C) 2025 TekFlox
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: AI Flow X ChatBot 1.0\n"
+"Project-Id-Version: TekFlox ChatBot 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/aiflowx-chat\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: aiflowx-chat.php
-msgid "AI Flow X ChatBot"
+msgid "TekFlox ChatBot"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -26,17 +26,17 @@ msgstr ""
 
 #. Description of the plugin
 #: aiflowx-chat.php
-msgid "AI Flow X ChatBot is a chatbot plugin which will allow user to find products and posts easily."
+msgid "TekFlox ChatBot is a chatbot plugin which will allow user to find products and posts easily."
 msgstr ""
 
 #. Author of the plugin
 #: aiflowx-chat.php
-msgid "AI Flow X"
+msgid "TekFlox"
 msgstr ""
 
 #. Author URI of the plugin
 #: aiflowx-chat.php
-msgid "https://aiflowx.io/"
+msgid "https://tekflox.com/"
 msgstr ""
 
 #: aiflowx-chat.php:43
