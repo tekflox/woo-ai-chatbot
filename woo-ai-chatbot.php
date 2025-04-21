@@ -722,6 +722,15 @@ function getOgImageFromUrl($url) {
 add_action('wp_ajax_aiflowx_chat_message', 'aiflowx_chat_process_message');
 add_action('wp_ajax_nopriv_aiflowx_chat_message', 'aiflowx_chat_process_message');
 
+// Add Settings link on the plugins page
+function aiflowx_chat_add_settings_link($links) {
+    $settings_link = '<a href="' . admin_url('options-general.php?page=aiflowx-chat-settings') . '">' . __('Settings', 'woo-ai-chatbot') . '</a>';
+    array_unshift($links, $settings_link);
+    return $links;
+}
+$plugin = plugin_basename(__FILE__);
+add_filter("plugin_action_links_$plugin", 'aiflowx_chat_add_settings_link');
+
 // Handle plugin activation via UI click
 function aiflowx_chat_handle_plugin_activation($plugin) {
     if ($plugin === plugin_basename(__FILE__)) {
